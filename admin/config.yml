@@ -1,0 +1,273 @@
+backend:
+  name: github
+  repo: darkedid89/barbara-yukhnjevich-site
+  branch: main
+
+publish_mode: simple
+media_folder: "uploads/ilovepdf_images-extracted"
+public_folder: "/uploads/ilovepdf_images-extracted"
+locale: "ru"
+search: false
+
+collections:
+  - name: "site"
+    label: "Сайт"
+    editor:
+      preview: false
+    files:
+      - name: "content"
+        label: "Контент сайта"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - label: "Настройки"
+            name: "settings"
+            widget: "object"
+            collapsed: false
+            fields:
+              - label: "Язык по умолчанию"
+                name: "defaultLang"
+                widget: "select"
+                options:
+                  - { label: "Русский", value: "ru" }
+                  - { label: "English", value: "en" }
+              - label: "Акцентный цвет"
+                name: "accentColor"
+                widget: "color"
+              - label: "Email"
+                name: "email"
+                widget: "string"
+              - label: "Соцсети"
+                name: "social"
+                widget: "string"
+                required: false
+              - label: "PDF портфолио"
+                name: "pdf"
+                widget: "string"
+                required: false
+
+          - label: "Русский"
+            name: "ru"
+            widget: "object"
+            collapsed: false
+            fields:
+              - label: "Навигация"
+                name: "nav"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Обо мне", name: "about", widget: "string" }
+                  - { label: "Услуги", name: "services", widget: "string" }
+                  - { label: "Портфолио", name: "portfolio", widget: "string" }
+                  - { label: "Процесс", name: "process", widget: "string" }
+                  - { label: "Контакт", name: "contact", widget: "string" }
+              - { label: "Кнопка в шапке", name: "headerCta", widget: "string" }
+              - { label: "Подсказка скролла", name: "scrollCue", widget: "string" }
+              - { label: "Hero: верхняя подпись", name: "heroKicker", widget: "string" }
+              - { label: "Hero: тег проекта", name: "heroFeatTag", widget: "string" }
+              - { label: "Hero: название проекта", name: "heroFeatTitle", widget: "string" }
+              - { label: "Hero: подпись бейджа", name: "heroBadge1", widget: "string" }
+              - { label: "Hero: заголовок 1", name: "heroH1a", widget: "string" }
+              - { label: "Hero: заголовок 2", name: "heroH1b", widget: "string" }
+              - { label: "Hero: описание", name: "heroSub", widget: "text" }
+              - { label: "Hero: кнопка 1", name: "heroCta1", widget: "string" }
+              - { label: "Hero: кнопка 2", name: "heroCta2", widget: "string" }
+              - { label: "Hero: факты", name: "heroFacts", widget: "text" }
+              - { label: "Hero: alt изображения", name: "heroImageAlt", widget: "string" }
+              - { label: "Обо мне: метка", name: "aboutLabel", widget: "string" }
+              - { label: "Обо мне: заголовок", name: "aboutH2", widget: "string" }
+              - { label: "Обо мне: абзац 1", name: "aboutP1", widget: "text" }
+              - { label: "Обо мне: абзац 2", name: "aboutP2", widget: "text" }
+              - { label: "Инструменты: метка", name: "aboutToolsLabel", widget: "string" }
+              - { label: "Принципы: метка", name: "aboutValuesLabel", widget: "string" }
+              - label: "Инструменты"
+                name: "tools"
+                widget: "list"
+              - label: "Принципы"
+                name: "values"
+                widget: "list"
+              - { label: "Услуги: заголовок", name: "servicesH2", widget: "string" }
+              - { label: "Услуги: метка", name: "servicesLabel", widget: "string" }
+              - label: "Услуги"
+                name: "services"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Название", name: "title", widget: "string" }
+                  - { label: "Описание", name: "desc", widget: "text" }
+                  - { label: "Символ", name: "glyph", widget: "string" }
+                  - { label: "Ширина карточки", name: "span", widget: "number", value_type: "int", min: 1, max: 12 }
+              - { label: "Портфолио: заголовок", name: "workH2", widget: "string" }
+              - { label: "Портфолио: метка", name: "workLabel", widget: "string" }
+              - { label: "Портфолио: подпись открытия", name: "openLabel", widget: "string" }
+              - { label: "Портфолио: примечание", name: "workNote", widget: "text" }
+              - label: "Фильтры"
+                name: "filters"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Ключ", name: "key", widget: "string" }
+                  - { label: "Название", name: "label", widget: "string" }
+              - label: "Проекты"
+                name: "projects"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "ID", name: "id", widget: "string" }
+                  - { label: "Изображение", name: "src", widget: "image" }
+                  - label: "Категории"
+                    name: "cats"
+                    widget: "select"
+                    multiple: true
+                    options:
+                      - "editorial"
+                      - "packaging"
+                      - "branding"
+                      - "amazon"
+                      - "social"
+                      - "print"
+                      - "digital"
+                  - { label: "Тег", name: "tag", widget: "string" }
+                  - { label: "Название", name: "title", widget: "string" }
+                  - { label: "Описание", name: "meta", widget: "string" }
+                  - { label: "Alt текст", name: "alt", widget: "string", required: false }
+              - label: "Статистика"
+                name: "stats"
+                widget: "list"
+                summary: "{{fields.value}}{{fields.suffix}}"
+                fields:
+                  - { label: "Значение", name: "value", widget: "string" }
+                  - { label: "Суффикс", name: "suffix", widget: "string", required: false }
+                  - { label: "Подпись", name: "label", widget: "string" }
+              - { label: "Процесс: заголовок", name: "processH2", widget: "string" }
+              - { label: "Процесс: метка", name: "processLabel", widget: "string" }
+              - label: "Шаги процесса"
+                name: "steps"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Название", name: "title", widget: "string" }
+                  - { label: "Описание", name: "desc", widget: "text" }
+              - { label: "Коллаборации: метка", name: "collabLabel", widget: "string" }
+              - label: "Коллаборации"
+                name: "collabs"
+                widget: "list"
+              - { label: "CTA: заголовок", name: "ctaH2", widget: "string" }
+              - { label: "CTA: описание", name: "ctaSub", widget: "text" }
+              - { label: "CTA: кнопка", name: "ctaBtn", widget: "string" }
+              - { label: "CTA: подпись email", name: "ctaEmailNote", widget: "string" }
+              - { label: "Footer: описание", name: "footerTagline", widget: "text" }
+              - { label: "Footer: удаленно", name: "footerRemote", widget: "string" }
+
+          - label: "English"
+            name: "en"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Navigation"
+                name: "nav"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "About", name: "about", widget: "string" }
+                  - { label: "Services", name: "services", widget: "string" }
+                  - { label: "Portfolio", name: "portfolio", widget: "string" }
+                  - { label: "Process", name: "process", widget: "string" }
+                  - { label: "Contact", name: "contact", widget: "string" }
+              - { label: "Header button", name: "headerCta", widget: "string" }
+              - { label: "Scroll cue", name: "scrollCue", widget: "string" }
+              - { label: "Hero: kicker", name: "heroKicker", widget: "string" }
+              - { label: "Hero: project tag", name: "heroFeatTag", widget: "string" }
+              - { label: "Hero: project title", name: "heroFeatTitle", widget: "string" }
+              - { label: "Hero: badge label", name: "heroBadge1", widget: "string" }
+              - { label: "Hero: heading 1", name: "heroH1a", widget: "string" }
+              - { label: "Hero: heading 2", name: "heroH1b", widget: "string" }
+              - { label: "Hero: description", name: "heroSub", widget: "text" }
+              - { label: "Hero: button 1", name: "heroCta1", widget: "string" }
+              - { label: "Hero: button 2", name: "heroCta2", widget: "string" }
+              - { label: "Hero: facts", name: "heroFacts", widget: "text" }
+              - { label: "Hero: image alt", name: "heroImageAlt", widget: "string" }
+              - { label: "About: label", name: "aboutLabel", widget: "string" }
+              - { label: "About: heading", name: "aboutH2", widget: "string" }
+              - { label: "About: paragraph 1", name: "aboutP1", widget: "text" }
+              - { label: "About: paragraph 2", name: "aboutP2", widget: "text" }
+              - { label: "Tools label", name: "aboutToolsLabel", widget: "string" }
+              - { label: "Values label", name: "aboutValuesLabel", widget: "string" }
+              - label: "Tools"
+                name: "tools"
+                widget: "list"
+              - label: "Values"
+                name: "values"
+                widget: "list"
+              - { label: "Services: heading", name: "servicesH2", widget: "string" }
+              - { label: "Services: label", name: "servicesLabel", widget: "string" }
+              - label: "Services"
+                name: "services"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+                  - { label: "Symbol", name: "glyph", widget: "string" }
+                  - { label: "Card width", name: "span", widget: "number", value_type: "int", min: 1, max: 12 }
+              - { label: "Portfolio: heading", name: "workH2", widget: "string" }
+              - { label: "Portfolio: label", name: "workLabel", widget: "string" }
+              - { label: "Portfolio: open label", name: "openLabel", widget: "string" }
+              - { label: "Portfolio: note", name: "workNote", widget: "text" }
+              - label: "Filters"
+                name: "filters"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Key", name: "key", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+              - label: "Projects"
+                name: "projects"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "ID", name: "id", widget: "string" }
+                  - { label: "Image", name: "src", widget: "image" }
+                  - label: "Categories"
+                    name: "cats"
+                    widget: "select"
+                    multiple: true
+                    options:
+                      - "editorial"
+                      - "packaging"
+                      - "branding"
+                      - "amazon"
+                      - "social"
+                      - "print"
+                      - "digital"
+                  - { label: "Tag", name: "tag", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Meta", name: "meta", widget: "string" }
+                  - { label: "Alt text", name: "alt", widget: "string", required: false }
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                summary: "{{fields.value}}{{fields.suffix}}"
+                fields:
+                  - { label: "Value", name: "value", widget: "string" }
+                  - { label: "Suffix", name: "suffix", widget: "string", required: false }
+                  - { label: "Label", name: "label", widget: "string" }
+              - { label: "Process: heading", name: "processH2", widget: "string" }
+              - { label: "Process: label", name: "processLabel", widget: "string" }
+              - label: "Process steps"
+                name: "steps"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Collaborations: label", name: "collabLabel", widget: "string" }
+              - label: "Collaborations"
+                name: "collabs"
+                widget: "list"
+              - { label: "CTA: heading", name: "ctaH2", widget: "string" }
+              - { label: "CTA: description", name: "ctaSub", widget: "text" }
+              - { label: "CTA: button", name: "ctaBtn", widget: "string" }
+              - { label: "CTA: email note", name: "ctaEmailNote", widget: "string" }
+              - { label: "Footer: tagline", name: "footerTagline", widget: "text" }
+              - { label: "Footer: remote text", name: "footerRemote", widget: "string" }
