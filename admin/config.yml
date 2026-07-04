@@ -2,7 +2,7 @@ backend:
   name: github
   repo: barbusha2013-ux/yuhnevich-design
   branch: main
-  base_url: https://yuhnevich-design.netlify.app
+  base_url: https://yuhnevich.com
   auth_endpoint: auth
 
 publish_mode: simple

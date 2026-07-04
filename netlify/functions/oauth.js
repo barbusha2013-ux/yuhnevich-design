@@ -34,7 +34,7 @@ function html(status, tokenOrMessage) {
 }
 
 function siteOrigin(event) {
-  const host = event.headers.host || "barbara-yukhnjevich-site.netlify.app";
+  const host = event.headers.host || "yuhnevich.com";
   const protocol = host.includes("localhost") || host.startsWith("127.0.0.1") ? "http" : "https";
   return `${protocol}://${host}`;
 }

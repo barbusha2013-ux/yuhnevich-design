@@ -2,7 +2,7 @@ window.siteContent = {
   settings: {
     defaultLang: "ru",
     accentColor: "#2F6D66",
-    email: "hello@example.com",
+    email: "hello@yuhnevich.com",
     social: "Behance · LinkedIn · Instagram",
     pdf: "uploads/portfolio YBA_compressed.pdf"
   },
@@ -230,7 +230,7 @@ window.siteContent = {
     ctaH2: "Есть бренд, продукт или издание, которому нужен дизайн?",
     ctaSub: "Расскажите о задаче — вернусь с идеями, как её решить точно, аккуратно и красиво.",
     ctaBtn: "Написать мне",
-    ctaEmailNote: "заменить на реальный email",
+    ctaEmailNote: "для запросов и проектов",
     footerTagline:
       "Дизайнер: editorial, print, упаковка, брендинг и Amazon-креатив. Печатная дисциплина в digital-формате.",
     footerRemote: "Работаю удалённо"
@@ -458,7 +458,7 @@ window.siteContent = {
     ctaH2: "Have a brand, product or publication to design?",
     ctaSub: "Tell me about the task — I will come back with ideas on how to solve it precisely, neatly and beautifully.",
     ctaBtn: "Write to me",
-    ctaEmailNote: "replace with real email",
+    ctaEmailNote: "for project inquiries",
     footerTagline:
       "Designer: editorial, print, packaging, branding and Amazon creative. Print discipline in a digital format.",
     footerRemote: "Working remotely"
