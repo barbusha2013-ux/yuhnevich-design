@@ -26,11 +26,14 @@
 2. Загрузить в него содержимое этой папки.
 3. В Netlify выбрать Add new project → Import from Git и подключить этот репозиторий.
 4. Для Netlify указать: build command пустой, publish directory `.`.
-5. В Netlify открыть Project configuration → Access & security → OAuth и добавить GitHub OAuth provider.
-6. В GitHub OAuth App указать callback URL: `https://api.netlify.com/auth/done`.
+5. В GitHub OAuth App указать callback URL: `https://barbara-yukhnjevich-site.netlify.app/callback`.
+6. В Netlify добавить environment variables для OAuth:
+   - `GITHUB_OAUTH_ID`
+   - `GITHUB_OAUTH_SECRET`
+   - `GITHUB_REPO_PRIVATE=1`
 7. После публикации открыть `https://адрес-сайта/admin/` и войти через GitHub.
 
-Важно: для нового проекта не используем Netlify Git Gateway, потому что Netlify помечает его как deprecated. Decap настроен через GitHub backend: пользователь админки должен иметь право push в репозиторий.
+Важно: для нового проекта не используем Netlify Git Gateway, потому что Netlify помечает его как deprecated. Decap настроен через GitHub backend и собственный Netlify Function OAuth proxy: пользователь админки должен иметь право push в репозиторий.
 
 ## Как будут применяться правки
 

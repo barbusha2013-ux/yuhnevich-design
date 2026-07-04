@@ -1,6 +1,16 @@
 [build]
   publish = "."
 
+[[redirects]]
+  from = "/auth"
+  to = "/.netlify/functions/oauth"
+  status = 200
+
+[[redirects]]
+  from = "/callback"
+  to = "/.netlify/functions/oauth"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
