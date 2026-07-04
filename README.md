@@ -16,17 +16,17 @@
 1. В Decap CMS или в `content/site.json` заменить `hello@example.com` на реальный email.
 2. При необходимости заменить строки `Behance · LinkedIn · Instagram` на реальные ссылки.
 3. В `index.html` обновить SEO-текст в `<title>`, `description` и `og:*`, если нужен другой текст для поисковиков и соцсетей.
-4. В `admin/config.yml` проверить строку `repo: darkedid89/barbara-yukhnjevich-site`. Она должна совпадать с реальным GitHub-репозиторием.
+4. В `admin/config.yml` проверить строку `repo: barbusha2013-ux/yuhnevich-design`. Она должна совпадать с реальным GitHub-репозиторием.
 
 ## Как выложить с редактированием
 
 Рекомендуемый путь:
 
-1. Создать GitHub-репозиторий `barbara-yukhnjevich-site`.
+1. Создать GitHub-репозиторий `yuhnevich-design`.
 2. Загрузить в него содержимое этой папки.
 3. В Netlify выбрать Add new project → Import from Git и подключить этот репозиторий.
 4. Для Netlify указать: build command пустой, publish directory `.`.
-5. В GitHub OAuth App указать callback URL: `https://barbara-yukhnjevich-site.netlify.app/callback`.
+5. В GitHub OAuth App указать callback URL: `https://yuhnevich-design.netlify.app/callback`.
 6. В Netlify добавить environment variables для OAuth:
    - `GITHUB_OAUTH_ID`
    - `GITHUB_OAUTH_SECRET`
