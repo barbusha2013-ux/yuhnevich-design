@@ -30,7 +30,7 @@
 6. В Netlify добавить environment variables для OAuth:
    - `GITHUB_OAUTH_ID`
    - `GITHUB_OAUTH_SECRET`
-   - `GITHUB_REPO_PRIVATE=1`
+   - `GITHUB_REPO_PRIVATE=0`
 7. После публикации открыть `https://адрес-сайта/admin/` и войти через GitHub.
 
 Важно: для нового проекта не используем Netlify Git Gateway, потому что Netlify помечает его как deprecated. Decap настроен через GitHub backend и собственный Netlify Function OAuth proxy: пользователь админки должен иметь право push в репозиторий.
