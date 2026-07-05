@@ -81,7 +81,6 @@
     text("heroKicker", t.heroKicker);
     text("heroFeatTag", t.heroFeatTag);
     text("heroFeatTitle", t.heroFeatTitle);
-    text("heroBadge1", t.heroBadge1);
     text("heroH1a", t.heroH1a);
     text("heroH1b", t.heroH1b);
     text("heroSub", t.heroSub);
